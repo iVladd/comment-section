@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: $very-light-gray;
+}
+
+button {
+  font-family: "Rubik", sans-serif;
+}

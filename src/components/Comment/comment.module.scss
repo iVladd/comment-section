@@ -1,0 +1,181 @@
+@import "/src/variables.scss";
+
+.wrapper {
+  background-color: $white;
+  display: flex;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 7px;
+  .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 35px;
+    .ratingPlus,
+    .ratingMinus {
+      cursor: pointer;
+      background-color: $very-light-gray;
+      color: $light-grayish-blue;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      height: 30px;
+      width: 100%;
+      &:hover {
+        color: $moderate-blue;
+      }
+    }
+    .ratingPlus {
+      border-radius: 7px 7px 0 0;
+    }
+    .ratingMinus {
+      border-radius: 0 0 7px 7px;
+    }
+    .scoreContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $very-light-gray;
+      color: $moderate-blue;
+      font-size: 15px;
+      font-weight: bold;
+      height: 30px;
+      min-width: 100%;
+      vertical-align: bottom;
+    }
+  }
+  .content {
+    margin-left: 20px;
+    width: 100%;
+    word-break: break-all;
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .userImage {
+        width: 25px;
+      }
+      .username {
+        font-weight: 500;
+      }
+      .currentUserLabel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 16px;
+        font-size: 11px;
+        font-weight: 500;
+        background-color: $moderate-blue;
+        color: #fff;
+      }
+      .created {
+        color: $grayish-blue;
+        font-size: 14px;
+      }
+      .buttons {
+        margin-left: auto;
+        display: flex;
+        button {
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          font-weight: 700;
+          font-size: 16px;
+        }
+        .replyBtn {
+          color: $moderate-blue;
+          .btnText {
+            margin-left: 3px;
+          }
+        }
+        .currentUserButtons {
+          display: flex;
+          gap: 15px;
+          .deleteBtn {
+            color: $soft-red;
+            &:disabled {
+              color: $pale-red;
+            }
+            .btnText {
+              vertical-align: top;
+              margin-left: 4px;
+            }
+          }
+          .editBtn {
+            color: $moderate-blue;
+            &:disabled {
+              color: $light-grayish-blue;
+            }
+            .btnText {
+              vertical-align: top;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+    .text {
+      margin-right: 40px;
+      margin-top: 15px;
+      color: $grayish-blue;
+      line-height: 1.3;
+      .replyingTo {
+        cursor: pointer;
+        color: $moderate-blue;
+        font-weight: 500;
+      }
+    }
+
+    .editContainer {
+      width: 100%;
+      .editArea {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 15px;
+        border-color: $light-gray;
+        border-radius: 7px;
+        width: 100%;
+        height: 100px;
+        font-family: inherit;
+        resize: none;
+        font-size: 16px;
+        &:focus {
+          outline-color: $moderate-blue;
+        }
+      }
+      .updateBtn {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          cursor: pointer;
+          text-transform: uppercase;
+          font-weight: 500;
+          color: #fff;
+          border: none;
+          padding: 12px 23px;
+          border-radius: 7px;
+          background-color: $moderate-blue;
+          &:disabled {
+            background-color: $light-grayish-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nestedCommentsWrapper {
+  position: relative;
+  margin-left: 90px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 2px;
+    height: 100%;
+    background-color: $light-gray;
+    overflow-x: hidden;
+  }
+}
